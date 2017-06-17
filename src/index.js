@@ -204,7 +204,7 @@ class Service {
 
       return instance.update(copy, options).then(instance => {
         if (options.raw === false) {
-          return instance;
+          return this._getOrFind(id, params);
         }
         return instance.toJSON();
       });
